@@ -1,7 +1,8 @@
 # Path to the root directories
-NDK			:= /opt/android-ndk-r8e
-SDK			:= /opt/android-sdk
-KERNELDIR		:= 
+CWD			= $(shell pwd)
+NDK			:= $(CWD)/../android-ndk-r8e
+SDK			:= $(CWD)/../adt-bundle-linux-x86_64-20130219/sdk
+KERNELDIR		:= $(CWD)/../omap
 
 # Select the device to build kernel modules for
 # Supported devices are located in the devices folder.
@@ -23,7 +24,8 @@ INSTALL_PATH		:= /tmp/lttng-android
 # Where lttng will be installed on the device
 # WARNING : Should not be the same path
 #           as the one containing .../var/run
-TARGET_INSTALL_PATH	:= /data/lttng-install
+REMOTE_INSTALL_PATH	:= /data/lttng-install
+PACKAGE_PUSH_PATH	:= /data/lttng-package
 
 # This path needs to be writable for the adb push
 PACKAGE_PUSH_PATH	:= /sdcard/lttng-android.tar
